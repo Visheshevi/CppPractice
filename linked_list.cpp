@@ -115,7 +115,7 @@ void removeDuplicates(){
 				break;
 			if(iter->data == find->data){
 				iter1->next = iter->next;
-				free(iter);
+				free(iter 	);
 				iter = iter1->next;		
 			}
 			else{
@@ -131,22 +131,66 @@ void removeDuplicates(){
 	}						
 }
 
+void findElementPosFromLast(int pos){
+	Node *temp;
+	int count=0;
+	int i;
+	temp = (Node *)malloc(sizeof(Node));
+	temp = head;
+	if(head == NULL){
+		cout<<"Empty list"<<endl;
+		return;	
+	}
+	else{
+		while(temp!=NULL){
+			count++;
+			temp = temp->next;		
+		}	
+	}
+	temp = head;
+	if(pos>count){
+		cout<<"No such position"<<endl;
+	}
+	else{
+		for(i = 0;i<count-pos;i++){
+			temp = temp->next;	
+		}
+		cout<<temp->data<<endl;
+	}	
+}
+//Another way could be to take to pointers and keep them pos distance apart
 
+void deleteWithAccess(){
+	Node *temp;
+	Node *temp1;	
+	temp = (Node *)malloc(sizeof(Node));
+	temp1 = (Node *)malloc(sizeof(Node));
+	//temp contains the node to which it is given access	
+	temp = head->next->next->next;
+	temp1 = temp->next;
+	temp->data = temp1->data;
+	temp->next = temp1->next;	
+	delete temp1;
+	
+}
 
 int main(){
 	head=NULL;	
 	insertFromFront(3);
 	insertFromFront(4);
-	insertFromFront(3);
-	insertFromFront(3);
-	insertFromFront(4);
+	insertFromFront(5);
+	insertFromFront(6);
+	insertFromFront(8);
 	insertFromFront(7);
-	insertFromFront(4);
+	insertFromFront(9);
 	traverse();
 	insertAtBack(8);
 	traverse();
 	insertAtPosition(2,2);
 	traverse();	
+	deleteWithAccess();	
+	traverse();	
+	//findElementPosFromLast(10);
 	//removeDuplicates();
 	//traverse();
 	return 0;
