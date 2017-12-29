@@ -12,3 +12,5 @@ we can find a solution 2 x 2 x 2
 Or, given a number 14
 we cannot find a solution as it can only has a solution 7 x 2.
 
+BinaryTree.cpp contains the program to create a binary tree and traverse the binary tree in preorder, post order and pre order. 
+
