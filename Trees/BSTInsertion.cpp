@@ -51,6 +51,30 @@ struct node* insert(struct node *node, int val){
 	return node;
 }
 
+int max(int a,int b){
+	return (a>=b) ? a: b;
+}
+
+int height(struct node* node){
+	if(node == NULL)
+		return 0;
+	return 1+ max(height(node->left), height(node->right));
+
+}
+
+bool isBalanced(struct node* node){
+	if(node == NULL)
+		return true;
+	int left_height = height(node->left);
+	int right_height = height(node->right);
+	//cout<<left_height<<endl;
+	if(abs(left_height - right_height) <= 1)
+		return true;
+	//cout<<abs(left_height - right_height)<<endl;
+	return false;
+}
+
+
 int main(){
 	int arr[10];
 	int index = 0;
@@ -64,9 +88,18 @@ int main(){
 	root->left->right->right = newNode(7);
 	root->right->right = newNode(14);
 	root->right->right->left = newNode(13);
-	inorder(root);
-	insert(root,5);
-	inorder(root);
+	root->right->right->right = newNode(17);
+	root->right->right->right->left = newNode(16);
+	root->right->right->right->left->right = newNode(20);
+	//inorder(root);
+	//insert(root,5);
+	//inorder(root);
+	if(isBalanced(root))
+		cout<<"isBalanced"<<endl;
+	else
+		cout<<"is not Balanced"<<endl;
+	//insert(root,5);
+	//inorder(root);
 	//cout<<search(root,11,0)<<endl;
 	return 0;
 }
