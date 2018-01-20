@@ -97,6 +97,60 @@ int balance(struct node* temp){
 		return 0;
 	return (heightOfTree(temp->left) - heightOfTree(temp->right));
 }
+struct node* findMinimum(struct node* node){
+	if(node == NULL)
+		return NULL;
+	if(node->left = NULL)
+		return node;
+	else
+		return findMinimum(node->left);
+}
+
+struct node* removeNode(struct node* node, int val){
+	struct node* temp;
+	if(node == NULL)
+		return NULL;
+	else if(val < node->data)
+		node->left = removeNode(node->left,val);
+	else if(val > node->data)
+		node->right = removeNode(node->right,val);
+	else if(node->left != NULL && node->right != NULL){
+		temp = findMinimum(node->right);
+		node->data = temp->data;
+		node->right = removeNode(node->right,node->data);
+
+	}
+	else{
+		temp = node;
+		if(node->left == NULL)
+			node = node->right;
+		if(node->right == NULL)
+			node = node->left;
+		delete temp;
+	}
+	if(node == NULL)
+		return node;
+
+	node->height = heightOfTree(node);
+
+	if(heightOfTree(node->left) - heightOfTree(node->right) == 2){
+		if(heightOfTree(node->left->left) - heightOfTree(node->left->right) == 1)
+			return leftRotate(node);
+		else{
+			node->right = rightRotate(node->right);
+			return leftRotate(node);
+		}
+	}
+	if(heightOfTree(node->left) - heightOfTree(node->right) == -2){
+		if(heightOfTree(node->right->right) - heightOfTree(node->right->left) == 1)
+			return rightRotate(node);
+		else{
+			node->left = leftRotate(node->left);
+			return rightRotate(node);
+		}
+	}
+	return node;
+}
 
 int main(){
 	struct node* root;
