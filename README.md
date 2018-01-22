@@ -17,6 +17,7 @@ BinaryTree.cpp contains the program to create a binary tree and traverse the bin
 Chapter 4 - Trees and Graphs
 
 4.1) Function implemented to check the balance of the tree in AVLInsertionDeletion.cpp
+
 4.3) BTSortedArrayMinimalHeight.cpp creates a tree of minimal height from the given sorted array.
 
 
