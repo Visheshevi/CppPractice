@@ -48,8 +48,9 @@ struct node* leftRotate(struct node* temp){
 }
 
 struct node* insert(struct node* temp, int val){
-	if(temp == NULL)
+	if(temp == NULL){
 		return (newNode(val));	
+	}
 	if(val>temp->data)
 		temp->right = insert(temp->right,val);
 	else if(val<temp->data)
@@ -156,6 +157,15 @@ struct node* removeNode(struct node* node, int val){
 	return node;
 }
 
+bool isPresent(struct node* node,int val){
+	if(node == NULL)
+		return false;
+	if(val < node->data)
+		return isPresent(node->left,val);
+	else if(val > node->data)
+		return isPresent(node->right,val);
+	return true;
+}
 int main(){
 	struct node* root;
 	root = insert(root, 10);
@@ -170,8 +180,8 @@ int main(){
   	root = insert(root, 25);
 	inorder(root);
 	cout<<endl;
-	removeNode(root,25);
-	inorder(root);
-	cout<<balance(root)<<endl;
+	//removeNode(root,25);
+	//inorder(root);
+	cout<<isPresent(root,21)<<endl;
 	return 0;
 }
