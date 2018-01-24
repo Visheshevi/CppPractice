@@ -21,3 +21,8 @@ Chapter 4 - Trees and Graphs
 4.3) BTSortedArrayMinimalHeight.cpp creates a tree of minimal height from the given sorted array.
 
 
+
+-----Deviation-----
+
+Bit manipulation problems added. Just to get accustomed if any interview request arises.
+
