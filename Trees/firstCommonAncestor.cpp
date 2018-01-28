@@ -34,7 +34,7 @@ bool findingThePath(struct node* node, vector<int> &path, int val){
   return false;
 }
 
-/* using 2 tree traerses */
+/* using 2 tree traverses */
 void commonAncestor(struct node* node, int first, int second){
   vector<int> first_path, second_path;
   int ancestor = 0;
