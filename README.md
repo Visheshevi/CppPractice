@@ -14,6 +14,8 @@ we cannot find a solution as it can only has a solution 7 x 2.
 
 BinaryTree.cpp contains the program to create a binary tree and traverse the binary tree in preorder, post order and pre order.
 
+separateChainingHashTable.cpp contains the program to implement hash table.
+
 Chapter 4 - Trees and Graphs
 
 4.1) Function implemented to check the balance of the tree in AVLInsertionDeletion.cpp
