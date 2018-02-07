@@ -25,6 +25,10 @@ Chapter 4 - Trees and Graphs
 
 
 
+Chapter 5 - Graphs
+
+Prerequisite: Create a graph with adjacency matrix and another with adjacency list.
+Files - establishAGraphWithAdjacencyList.cpp
 
 -----Deviation-----
 
