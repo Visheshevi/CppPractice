@@ -36,12 +36,50 @@ struct Graph* createGraph(int vertices){
 
 void addEdge(struct Graph* g,int src, int dest){
   struct adjList* temp = newNode(dest);
-  temp->next = g->array[src].head;
-  g->array[src].head = temp;
-
+  int flag = 0;
+  /* To add an edge from source to destination */
+  if(g->array[src].head == NULL){
+    g->array[src].head = temp;
+  }
+  else{
+    struct adjList* check = g->array[src].head;
+    while(1){
+      if(check->data == dest){
+        flag = 1;
+        cout << "flag " << flag << endl;
+        break;
+      }
+      if(check->next != NULL)
+        check = check->next;
+      else{
+        check->next = temp;
+        break;
+      }
+    }
+  }
+  /* Add an edge from destination to source as we creating an undirected graph */
   temp = newNode(src);
-  temp->next = g->array[dest].head;
-  g->array[dest].head = temp;
+  flag = 0;
+  if(g->array[dest].head == NULL){
+    g->array[dest].head = temp;
+  }
+  else{
+    struct adjList* check = g->array[dest].head;
+    while(1){
+      if(check->data == src){
+        flag = 1;
+        break;
+      }
+      if(check->next != NULL)
+        check = check->next;
+      else{
+        check->next = temp;
+        break;
+      }
+    }
+    if(flag == 1)
+      cout << "Edge cannot be added as it is already present " << endl;
+  }
 }
 
 void display(struct Graph* g){
@@ -61,6 +99,7 @@ int main(){
   cout << "Enter the number of vertices in graph ";
   cin >> n;
   struct Graph* G = createGraph(n);
+  addEdge(G,2,3);
   addEdge(G,2,3);
   addEdge(G,1,2);
   addEdge(G,2,4);
