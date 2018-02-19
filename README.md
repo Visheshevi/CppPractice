@@ -29,7 +29,7 @@ Chapter 5 - Graphs
 
 Prerequisite: Create a graph with adjacency matrix and another with adjacency list. Do a BFS and DFS.
 Files - establishAGraphWithAdjacencyList.cpp, establishAGraphWithAdjacencyMatrix.cpp, directedGraphAdjacencyList.cpp
-
+The file directedGraphAdjacencyList.cpp contains the BFS and DFS functions. 
 -----Deviation-----
 
 Bit manipulation problems added. Just to get accustomed if any interview request arises.

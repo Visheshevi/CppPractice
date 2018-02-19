@@ -8,11 +8,12 @@ using namespace std;
 class Graph{
   int V;
   list<int> *array;
-
+  void DFSPart2(int src, bool visited[]);
 public:
   Graph(int V);
   void addEdge(int src, int dest);
   void BFS(int src);
+  void DFS(int src);
 };
 
 Graph::Graph(int V){
@@ -46,6 +47,23 @@ void Graph::BFS(int src){
   }
 }
 
+void Graph::DFSPart2(int src, bool visited[]){
+  visited[src] = true;
+  cout << src << " " ;
+  list<int>::iterator i;
+  for(i = array[src].begin();i != array[src].end();i++){
+    if(!visited[*i]){
+      DFSPart2(*i,visited);
+    }
+  }
+}
+void Graph::DFS(int src){
+  bool * visited = new bool[V];
+  for(int i = 0;i<V;i++)
+    visited[i] = false;
+  DFSPart2(src,visited);
+}
+
 int main(){
   Graph g(4);
   g.addEdge(0, 1);
@@ -54,6 +72,7 @@ int main(){
   g.addEdge(2, 0);
   g.addEdge(2, 3);
   g.addEdge(3, 3);
-  g.BFS(2);
+  //g.BFS(2);
+  g.DFS(2);
   return 0;
 }
