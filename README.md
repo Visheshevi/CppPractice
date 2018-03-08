@@ -26,11 +26,14 @@ Chapter 4 - Trees and Graphs
 
 
 
-Chapter 5 - Graphs
+Graphs
 
 Prerequisite: Create a graph with adjacency matrix and another with adjacency list. Do a BFS and DFS.
 Files - establishAGraphWithAdjacencyList.cpp, establishAGraphWithAdjacencyMatrix.cpp, directedGraphAdjacencyList.cpp
 The file directedGraphAdjacencyList.cpp contains the BFS and DFS functions.
 -----Deviation-----
 
+
+Chapter 5 - Bit manipulation
+5.1) The file setAtspecifiedbits.cpp contains a code to make a number a substring of the other number.
 Bit manipulation problems added. Just to get accustomed if any interview request arises.
