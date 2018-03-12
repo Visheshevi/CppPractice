@@ -36,4 +36,6 @@ The file directedGraphAdjacencyList.cpp contains the BFS and DFS functions.
 
 Chapter 5 - Bit manipulation
 5.1) The file setAtspecifiedbits.cpp contains a code to make a number a substring of the other number.
+5.2) Given a string, the file decimal2binary.cpp converts the decimal number into binary.
+5.3) Given a number, the file nextLargestSmaller.cpp gives the next highest and smallest number having the same number of 1s. 
 Bit manipulation problems added. Just to get accustomed if any interview request arises.
