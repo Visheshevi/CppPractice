@@ -31,8 +31,6 @@ Graphs
 Prerequisite: Create a graph with adjacency matrix and another with adjacency list. Do a BFS and DFS.
 Files - establishAGraphWithAdjacencyList.cpp, establishAGraphWithAdjacencyMatrix.cpp, directedGraphAdjacencyList.cpp
 The file directedGraphAdjacencyList.cpp contains the BFS and DFS functions.
------Deviation-----
-
 
 Chapter 5 - Bit manipulation
 5.1) The file setAtspecifiedbits.cpp contains a code to make a number a substring of the other number.
@@ -41,3 +39,8 @@ Chapter 5 - Bit manipulation
 Bit manipulation problems added. Just to get accustomed if any interview request arises.
 5.5) Program to find the number of bits that are needed to be flipped
 5.6) swapbits.c contains the program to swap bits in the even pace with those in the odd place
+
+
+-----Deviation-----
+Preparing Interview Questions
+1. Convert the given integer number into words(upto 999999). File - digits2Words.cpp
