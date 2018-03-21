@@ -44,3 +44,5 @@ Bit manipulation problems added. Just to get accustomed if any interview request
 -----Deviation-----
 Preparing Interview Questions
 1. Convert the given integer number into words(upto 999999). File - digits2Words.cpp
+2. Finding the longest common subsequence among two given arrays(or strings). File - longestCommonSubsequence.cpp
+3. Dynamic programming - fibonacci series. File - fibonacciDP.cpp
