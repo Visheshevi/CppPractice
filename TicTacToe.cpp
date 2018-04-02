@@ -35,7 +35,7 @@ class TicTacToe {
       return y;
     }
     int get_index(TicTacToe T){
-      if(x >=T.N || y >= T.N){
+      if(x >=T.get_max_size() || y >= T.get_max_size()){
         //cout << "Invalid points" << endl;
         return -1;
       }
@@ -173,10 +173,12 @@ class TicTacToe {
   int get_prev_id(){
     return prev_id;
   }
-
+  TicTacToe(){
+    N = 0;
+  }
  private:
 
-  int N = 0;
+  int N;
   int prev_id;
   vector<char> board;
 
